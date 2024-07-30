@@ -246,16 +246,7 @@ header .navbar ul li a:hover {
 }
 
 /* Responsive Design */
-@media (max-width: 380px) {
-    header{
-        margin-left:40px;
-    }
-}
-@media (max-width: 330px) {
-    header{
-        margin-left:60px;
-    }
-}
+
 @media (max-width: 768px) {
     header, .container, .home, .about, .contact {
         padding: 1rem;
@@ -289,5 +280,15 @@ header .navbar ul li a:hover {
 
     .contact .content h1, .contact .content h2 {
         font-size: 1.4rem;
+    }
+}
+@media (max-width: 380px) {
+    header{
+        margin-left:40px;
+    }
+}
+@media (max-width: 330px) {
+    header{
+        margin-left:60px;
     }
 }
