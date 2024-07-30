@@ -289,6 +289,6 @@ header .navbar ul li a:hover {
 }
 @media (max-width: 330px) {
     header{
-        margin-left:60px;
+        margin-left:40px;
     }
 }
