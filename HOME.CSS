@@ -1,12 +1,3 @@
-:root {
-    --main-bg-color: linear-gradient(deeppink, purple);
-    --header-bg-color: rgba(255, 255, 255, .2);
-    --text-color-light: #fff;
-    --text-color-dark: #555;
-    --bar-bg-color: #555;
-    --bar-fill-color: #fff;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -20,26 +11,43 @@
 
 html {
     font-size: 62.5%;
+    overflow: hidden;
 }
 
 body {
+    overflow: hidden;
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    background: var(--main-bg-color);
-    padding: 2rem;
+    align-items: flex-end;
+    justify-content: space-between;
+    background: linear-gradient(deeppink, purple);
+    padding: 5.5rem;
+}
+
+section {
+    padding: 1rem 7%;
+}
+
+.heading {
+    font-size: 3rem;
+    text-align: center;
+    padding: 1rem;
+    color: #fff;
 }
 
 header {
     width: 100%;
     max-width: 35rem;
-    background: var(--header-bg-color);
+    background: rgba(255, 255, 255, .2);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, .3);
     backdrop-filter: blur(.4rem);
     text-align: center;
     padding: 1rem;
     border-radius: 1rem;
-    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 header .user {
@@ -47,6 +55,7 @@ header .user {
 }
 
 header .user img {
+    margin: 1rem 0;
     height: 15rem;
     width: 15rem;
     border-radius: 50%;
@@ -56,7 +65,7 @@ header .user img {
 
 header .user .name {
     font-size: 3rem;
-    color: var(--text-color-light);
+    color: #fff;
     padding: .5rem 0;
 }
 
@@ -67,22 +76,26 @@ header .user .post {
 }
 
 header .navbar {
-    padding: 1rem;
+    padding: 1rem 3rem;
 }
 
 header .navbar ul {
-    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
 }
 
 header .navbar ul li {
     margin: 1rem 0;
+    list-style: none;
 }
 
 header .navbar ul li a {
     display: block;
     padding: 1rem;
-    font-size: 1.8rem;
-    color: var(--text-color-light);
+    font-size: 2rem;
+    color: #fff;
     background: rgba(255, 255, 255, .2);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
     border-radius: 1rem;
@@ -91,36 +104,39 @@ header .navbar ul li a {
 
 header .navbar ul li a:hover {
     background-color: rgba(255, 255, 255, .5);
-    color: var(--text-color-dark);
+    color: #555;
+    transition: none;
 }
 
 .container {
-    max-width: 80rem;
-    margin: 0 auto;
+    height: 58rem;
+    width: 80rem;
     background: rgba(255, 255, 255, .2);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, .3);
     backdrop-filter: blur(.4rem);
     border-radius: 2rem;
     overflow: hidden;
-    padding: 2rem;
 }
 
 .home {
+    min-height: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    padding: 5rem 1rem;
+    flex-flow: column;
+    position: relative;
+    padding-bottom: 10rem;
 }
 
 .home h3 {
     font-size: 2.5rem;
-    color: var(--text-color-light);
+    font-weight: lighter;
+    color: white;
 }
 
 .home .name span {
     font-size: 3rem;
+    color: #fff;
 }
 
 .home .post {
@@ -129,13 +145,14 @@ header .navbar ul li a:hover {
 
 .home .post span {
     font-size: 2rem;
+    color: #fff;
 }
 
-.btn, .download-btn {
-    font-size: 1.8rem;
-    padding: 1rem 2rem;
+.btn {
+    font-size: 2rem;
+    padding: 1rem 1rem;
     background: rgba(255, 255, 255, .2);
-    color: var(--text-color-light);
+    color: #fff;
     border-radius: 1rem;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, .3);
     margin-top: 1rem;
@@ -143,14 +160,17 @@ header .navbar ul li a:hover {
     transition: all .2s linear;
 }
 
-.btn:hover, .download-btn:hover {
+.btn:hover {
     background: rgba(255, 255, 255, .5);
-    color: var(--text-color-dark);
+    color: #555;
 }
 
 .home .share {
+    position: absolute;
+    left: 50%;
+    bottom: 5rem;
+    transform: translateX(-50%);
     display: flex;
-    justify-content: center;
     padding: 1rem;
     border-radius: 1rem;
     background: rgba(255, 255, 255, .1);
@@ -160,21 +180,20 @@ header .navbar ul li a:hover {
 .home .share a {
     background: rgba(255, 255, 255, .2);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
-    padding: 1rem;
-    margin: 0 0.5rem;
-    color: var(--text-color-light);
+    padding: 1rem 2rem;
+    margin: 1rem;
+    color: #fff;
     font-size: 2rem;
     border-radius: 1rem;
-    transition: all .2s linear;
 }
 
 .home .share a:hover {
     background: rgba(255, 255, 255, .5);
-    color: var(--text-color-dark);
+    color: #555;
 }
 
 .about {
-    padding: 2rem 1rem;
+    min-height: 100%;
 }
 
 .about .content h3 {
@@ -183,7 +202,7 @@ header .navbar ul li a:hover {
 }
 
 .about .content h3 span {
-    color: var(--text-color-light);
+    color: #fff;
 }
 
 .about .content p {
@@ -193,7 +212,7 @@ header .navbar ul li a:hover {
 }
 
 .about .skills {
-    padding: 1rem 0;
+    padding: 0.5rem 0;
 }
 
 .about .skills .progress {
@@ -208,87 +227,127 @@ header .navbar ul li a:hover {
     display: flex;
     justify-content: space-between;
     font-size: 2rem;
-    color: var(--text-color-light);
+    color: #fff;
 }
 
 .about .skills .progress .bar {
     position: relative;
     width: 100%;
-    height: .5rem;
+    height: .1em;
     margin: 1rem 0;
-    background: var(--bar-bg-color);
+    background: #555;
 }
 
 .about .skills .progress .bar span {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
-    background: var(--bar-fill-color);
+    height: 10%;
+    background: #fff;
 }
 
 .download-btn {
-    font-size: 1.8rem;
-    padding: 1rem 2rem;
+    font-size: 2rem;
+    padding: 1rem 1rem;
+    background: rgba(255, 255, 255, .2);
+    color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .3);
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: all .2s linear;
 }
 
-.contact {
-    padding: 2rem 1rem;
+.download-btn:hover {
+    background: rgba(255, 255, 255, .5);
+    color: #555;
 }
+@media (max-width: 2005px) {
+    .container {
+        position: absolute;
+        top: 50px;
+        left: 600px;
+        height:600px;
+    }
+    header{
+        left: 200px; 
+        top:50px;
+    }
+ }
 
-.contact .content h1, .contact .content h2 {
-    font-size: 1.6rem;
-    color: var(--text-color-light);
-}
 
-.contact .content div {
-    margin-left: 1rem;
-}
 
-/* Responsive Design */
+
 
 @media (max-width: 768px) {
-    header, .container, .home, .about, .contact {
-        padding: 1rem;
-    }
-    
+    .container {
+        position: absolute;
+        top: 550px;
+        left: -20px;
+        height:700px;
+    } 
    
-    .home h3 {
-        font-size: 2rem;
-    }
-
-    .home .name span {
+    .about .content p {
         font-size: 2.5rem;
+       
     }
-
-    .home .post, .btn, .download-btn {
-        font-size: 1.6rem;
+    #about .content{
+        top:250px;
     }
-
-    .home .share a {
-        font-size: 1.6rem;
-        padding: .8rem;
-    }
-
-    .about .content h3 {
-        font-size: 2rem;
-    }
-
-    .about .skills .progress h3 {
-        font-size: 1.6rem;
-    }
-
-    .contact .content h1, .contact .content h2 {
-        font-size: 1.4rem;
-    }
+    .container .skills {
+        height:850px;}
+        header {
+            width: 100%;
+            max-width: 100%;
+            padding: 1rem;
+            left:-0px;
+            top:-35px;
+        }
+    
+        header .navbar ul {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        header .navbar ul li {
+            margin: 0.5rem 0;
+        }
+    
 }
-@media (max-width: 380px) {
-    header{
-        margin-left:40px;
+
+@media (max-width: 320px) {
+    .container {
+        position: absolute;
+        top: 750px;
+        left: -20px;
+        height:750px;
+    } 
+   
+    .about .content p {
+        font-size: 2.5rem;
+       
     }
-}
-@media (max-width: 330px) {
-    header{
-        margin-left:50px;
+    #about .content{
+        top:250px;
     }
+    .container .skills {
+        height:850px;}
+        header {
+            width: 100%;
+            max-width: 100%;
+            padding: 1rem;
+            left:-0px;
+            top:150px;
+        }
+    
+        header .navbar ul {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        header .navbar ul li {
+            margin: 0.5rem 0;
+        }
+    
 }
+
